@@ -549,6 +549,18 @@ internal static class MenusLocalizerExtensions
                 new()
                 {
                     IsNew = true,
+                    Text = Localizer["login"],
+                    Url = "login"
+                },
+                new()
+                {
+                    IsNew = true,
+                    Text = Localizer["dispatchMain"],
+                    Url = "dispatchMain"
+                },
+                new()
+                {
+                    IsNew = true,
                     Text = Localizer["CodeEditor"],
                     Url = "code-editors"
                 },

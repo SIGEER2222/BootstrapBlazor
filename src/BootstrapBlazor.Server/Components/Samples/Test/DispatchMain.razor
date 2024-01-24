@@ -1,0 +1,32 @@
+@page "/dispatchMain"
+@using BootstrapBlazor.Components
+@inject IStringLocalizer<ValidateForms> Localizer
+@inject IStringLocalizer<Foo> LocalizerFoo
+
+<ValidateForm Model="@lotInfo" >
+
+    <div class="row g-3">
+        <div class="col-12">
+            <BootstrapInputGroup>
+                <BootstrapInputGroupLabel ShowRequiredMark DisplayText="LotName"></BootstrapInputGroupLabel>
+                    <BootstrapInput @bind-Value="@lotInfo.LotName" IsDisabled="true" DisplayText="@Localizer["LongDisplayText"]" />
+                </BootstrapInputGroup>
+            <p></p>
+                <BootstrapInputGroup>
+                <BootstrapInputGroupLabel ShowRequiredMark DisplayText="EqpName"></BootstrapInputGroupLabel>
+                    <BootstrapInput @bind-Value="@lotInfo.EqpName" IsDisabled="true" DisplayText="@Localizer["LongDisplayText"]" />
+                </BootstrapInputGroup>
+            <p></p>
+            <Button ButtonType="ButtonType.Submit" Icon="fa-fw fa-solid fa-floppy-disk" Text="具体的操作"  IsAsync="true"></Button>
+        </div>
+    </div>
+</ValidateForm>
+<p></p>
+<Console Items="@Messages" Height="126" ShowAutoScroll="true" OnClear="@OnClear"/>
+
+@code {
+    private LotInfo lotInfo = new LotInfo();
+    private void HandleLogin()
+    {
+    }
+}
